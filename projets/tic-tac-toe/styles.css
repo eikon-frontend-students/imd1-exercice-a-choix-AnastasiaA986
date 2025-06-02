@@ -11,7 +11,8 @@ html {
 }
 body {
   font-family: "Super Dream", sans-serif;
-  background: #0a0603 url(../../images/background.png) center/cover no-repeat;
+  background: #0a0603 url(/projets/tic-tac-toe/images/background.png)
+    center/cover no-repeat;
   min-height: 100vh;
 }
 .wrap {
