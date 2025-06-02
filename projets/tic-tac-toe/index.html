@@ -4,13 +4,25 @@
     <meta charset="UTF-8" />
     <title>Jeu du Morpion</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Jeu du Morpion</h1>
-    <div class="board" id="board"></div>
-    <div class="status" id="status">Joueur X commence</div>
-    <button class="reset" id="reset">Rejouer</button>
-
-    <script src="script.js"></script>
+    <div class="wrap">
+      <div class="error">
+        <h1>404</h1>
+        <p>oops...the page you’re looking for wasn’t found</p>
+        <h3>but you can enjoy the game</h3>
+      </div>
+      <div class="jeu">
+        <h2>Jeu du Morpion</h2>
+        <div class="board" id="board"></div>
+        <div class="status" id="status">Joueur X commence</div>
+        <button class="reset" id="reset">Rejouer</button>
+        <script src="script.js"></script>
+      </div>
+    </div>
   </body>
 </html>
