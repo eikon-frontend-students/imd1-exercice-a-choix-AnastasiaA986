@@ -32,11 +32,18 @@ function handleClick(e) {
   if (grid[index] || checkWinner()) return;
 
   grid[index] = currentPlayer;
-  e.target.textContent = currentPlayer;
+
+  const img = document.createElement("img");
+  img.src = currentPlayer === "X" ? "images/hat.svg" : "images/rabbit.svg";
+  img.alt = currentPlayer;
+  img.classList.add("symbol-img");
+
+  e.target.appendChild(img);
   e.target.classList.add("taken");
 
   const winner = checkWinner();
   if (!statusText) return;
+
   if (winner) {
     statusText.textContent =
       winner === "Egalité" ? "Match nul !" : `Joueur ${winner} a gagné !`;
@@ -51,8 +58,9 @@ function resetGame() {
   currentPlayer = "X";
   if (!statusText) return;
   statusText.textContent = "Joueur X commence";
+
   board.querySelectorAll(".cell").forEach((cell) => {
-    cell.textContent = "";
+    cell.innerHTML = ""; // Очищает изображения
     cell.classList.remove("taken");
   });
 }

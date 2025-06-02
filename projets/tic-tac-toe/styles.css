@@ -1,10 +1,65 @@
+@font-face {
+  font-family: "Super Dream";
+  src: url("/projets/tic-tac-toe/Fonts/SuperDream.woff") format("woff2"),
+    url("/projets/tic-tac-toe/Fonts/SuperDream.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-size: 100%;
+}
 body {
-  font-family: sans-serif;
-  text-align: center;
-  background: #f0f0f0;
+  font-family: "Super Dream", sans-serif;
+  background: #0a0603 url(/projets/tic-tac-toe/images/background.png)
+    center/cover no-repeat;
+  min-height: 100vh;
+}
+.wrap {
+  margin: 7.5rem 14rem;
+  gap: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 h1 {
-  margin-top: 20px;
+  margin: 0;
+  -webkit-text-stroke: 3px #503cff;
+  font-size: 8rem;
+  font-weight: 400;
+}
+h2 {
+  margin: 10px 0;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  color: #513bff;
+}
+h3 {
+  margin: 10px 0;
+  font-size: 3rem;
+  color: #e7e7e7;
+  max-width: 25.625rem;
+}
+p {
+  max-width: 21rem;
+  font-size: 2rem;
+}
+.status,
+p {
+  font-family: "Cormorant Garamond", serif;
+  color: #e7e7e7;
+  font-weight: 700;
+  margin: 15px 0;
+}
+.error,
+.jeu {
+  display: flex;
+  flex-direction: column;
+}
+.jeu {
+  align-items: center;
+  justify-content: center;
 }
 .board {
   display: grid;
@@ -15,8 +70,8 @@ h1 {
   width: max-content;
 }
 .cell {
-  background: white;
-  border: 2px solid #333;
+  background: transparent;
+  border: 3px solid #e7e7e7;
   font-size: 3rem;
   display: flex;
   align-items: center;
@@ -27,12 +82,41 @@ h1 {
   cursor: not-allowed;
 }
 .status {
-  margin-top: 20px;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 .reset {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
+  font-family: "Super Dream", sans-serif;
+  position: relative;
+  color: #e7e7e7;
+  width: 6.8rem;
+  height: 6.8rem;
+  border-radius: 50%;
+  border: 3px solid #d9d9d9;
+  background: #513bff;
+  margin-top: 1.25rem;
+  font-size: 1.3rem;
   cursor: pointer;
+  z-index: 1;
+}
+.reset::after {
+  content: "";
+  position: absolute;
+  top: -0.6rem;
+  left: -0.6rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  border: 1px solid #d9d9d9;
+  z-index: -1;
+}
+.symbol-img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
 }
